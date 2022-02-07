@@ -3,19 +3,18 @@
 # The method should return false otherwise. For example coprime?(25, 12) is true because
 # 1 is the only number that divides both 25 and 12.
 
-puts "hi"
 def coprime?(number1, number2)
-
+new_bool = true
 (2..number2).each do |val|
-    new_bool = true
         if number1%val == 0 && number2%val == 0
-            return false
             new_bool = false
         end
-    if new_bool == true
-        return true
-    end
 end
+if new_bool == true
+        return true
+    else
+        return false
+    end
 end
 
 
