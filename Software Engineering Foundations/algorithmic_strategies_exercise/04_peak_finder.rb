@@ -3,6 +3,8 @@
 # An element is considered a "peak" if it is greater than both it's left and right neighbor.
 # The first or last element of the array is considered a "peak" if it is greater than it's one neighbor.
 
+# So initiially i looped through the array assigning each value of the array to the i, then I realized that I did not want to loop through the array itself but from 0 to the array length
+
 def peak_finder(arr)
 new_array = []
 (0..arr.length-1).each do |i|
