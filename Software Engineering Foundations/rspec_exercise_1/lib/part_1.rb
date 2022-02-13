@@ -15,6 +15,14 @@ str.upcase + "!"
 end
 
 def alternating_case(sentence)
-new_array = sentence.split("")
+new_array = sentence(" ")
 
+new_array.map.with_index do |word, i|
+    if i%2 == 0
+        word.upcase
+    else
+        word.downcase
+    end
+end
+return new_array.join(" ")
 end
