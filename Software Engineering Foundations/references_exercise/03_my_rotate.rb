@@ -11,7 +11,8 @@
 
 
 def my_rotate!(array, amt)
-
+array.rotate!(amt)
+array
 end
 
 
