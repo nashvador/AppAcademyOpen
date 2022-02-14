@@ -25,6 +25,4 @@ end
 
 def aba_array(array)
 array.map {|x| aba_translate(x)}
-
-
 end
