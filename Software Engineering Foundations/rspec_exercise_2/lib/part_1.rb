@@ -26,15 +26,18 @@ hash
 end
 
 def censor(sentence, array)
-array_new = sentence.split(" ")
-array_new.map do |x|
-    if array.include?(x.downcase)
-        x.gsub(/[aeiou]/i, "*")
+words = sentence.split(" ")
+
+words.map do |word|
+    word_1 = word
+    if array.include?(word_1.downcase)
+        word.tr!("aeiouAEIOU", "*")
     else
-        x
+        word
     end
 end
-array_new.join(" ")
+
+words.join(" ")
 end
 
 def power_of_two?(num)
