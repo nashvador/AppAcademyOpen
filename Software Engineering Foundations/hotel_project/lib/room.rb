@@ -25,7 +25,7 @@ class Room
     end
 
     def add_occupant(name)
-        if full?
+        if self.full?
             return false
         else
             @occupants << name
