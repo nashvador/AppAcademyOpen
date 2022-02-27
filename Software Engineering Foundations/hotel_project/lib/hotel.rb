@@ -42,13 +42,26 @@ return new_name_array.join(" ")
     end
     end
 
-    def has_vacancy?
-      if @rooms.full? == true
-        return false
+  def has_vacancy?    
+    vacancy_boolean = false
+    @rooms.each_value do |val|
+      if val.full?
       else
-        return true
+        vacancy_boolean = true
       end
+    end
+    return vacancy_boolean
+  end
 
+  def list_rooms
+    @rooms.each do |key, val|
+      print "/" + key + ".*"
+      print val.available_space.to_s
+      print 'n' 
     end
 
+  end
+
+
+    
 end

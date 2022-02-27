@@ -12,8 +12,10 @@
 # pow(3, 4) # => 81
 # pow(4, 3) # => 64
 def pow(base, exponent)
-
+return 1 if exponent == 0
+    base * pow(base, exponent - 1)
 end
+
 
 
 # Write a method, lucas_number(n), that takes in a number.
@@ -35,7 +37,12 @@ end
 # lucas_number(5)   # =>    11
 # lucas_number(9)   # =>    76
 def lucas_number(n)
-
+if n == 0
+    return 2
+elsif n == 1
+    return 1
+end
+   lucas_number(n-1) + lucas_number(n-2) 
 end
 
 
@@ -51,6 +58,9 @@ end
 # sum_array([5, 2])         # => 7
 # sum_array([4, 10, -1, 2]) # => 15
 def sum_array(array)
+return 0 if array.length == 0
+    new_array = array.slice(0,-1)
+array[-1] + sum_array(new_array)
 
 end
 
@@ -61,13 +71,13 @@ end
 # Solve this recursively!
 #
 # Examples:
-# 
 # reverse_string("")            # => ""
 # reverse_string("c")           # => "c"
 # reverse_string("internet")    # => "tenretni"
 # reverse_string("friends")     # => "sdneirf"
 def reverse_string(str)
-
+return str if str.length == 1 || str.length == 0
+str[-1] + reverse_string(str[0..-1])
 end
 
 
