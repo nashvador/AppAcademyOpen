@@ -25,5 +25,24 @@ class Array
     new_hash
   end
 
+  def my_count(value)
+    return 0 if self.include?(value) == false
+    counter = self.tally
+    return counter[value]
+  end
+
+  def my_index(value)
+    return nil if self.include?(value) == false
+    self.find_index(value)
+  end
+
+  def my_uniq
+    return self & self
+  end
+
+  def my_transpose
+    self.first.zip(*self.drop(1))
+
+  end
 
 end
