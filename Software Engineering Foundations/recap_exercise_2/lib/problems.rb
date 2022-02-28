@@ -1,7 +1,14 @@
 # Write a method, least_common_multiple, that takes in two numbers and returns the smallest number that is a mutiple
 # of both of the given numbers
 def least_common_multiple(num_1, num_2)
+new_array = []
 
+
+
+def larger_function(num)
+
+
+end
 end
 
 
@@ -15,7 +22,7 @@ end
 class Hash
     # Write a method, Hash#inverse, that returns a new hash where the key-value pairs are swapped
     def inverse
-
+        self.invert
     end
 end
 
