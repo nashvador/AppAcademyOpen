@@ -58,9 +58,14 @@ end
 # sum_array([5, 2])         # => 7
 # sum_array([4, 10, -1, 2]) # => 15
 def sum_array(array)
-return 0 if array.length == 0
-    new_array = array.slice(0,-1)
-array[-1] + sum_array(new_array)
+if array.length == 0
+    return 0
+elsif array.length == 1
+    return array[0]
+else
+    new_array = array[0..-1]
+    array[-1] + sum_array(new_array)
+end
 
 end
 

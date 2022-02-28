@@ -18,6 +18,14 @@ end
 end
 
 
+def nth_prime(n)
+
+
+
+
+end
+
+
 
 def prime_range(number1, number2)
 prime_numbers_array = []
