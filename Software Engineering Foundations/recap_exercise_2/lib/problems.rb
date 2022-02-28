@@ -30,7 +30,15 @@ end
 class Array
     # Write a method, Array#pair_sum_count, that takes in a target number returns the number of pairs of elements that sum to the given target
     def pair_sum_count(num)
-
+    counter = 0
+    self.each_with_index do |first_value, idx|
+        self[idx+1..-1].each do |other_values|
+            if first_value + other_values == num
+                counter += 1
+            end
+        end
+    end
+    counter
     end
 
     # Write a method, Array#bubble_sort, that takes in an optional proc argument.

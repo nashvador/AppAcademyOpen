@@ -74,6 +74,7 @@ class Hash
     # hash_2.my_select { |k, v| k + 1 == v }      # => {10=>11, 5=>6, 7=>8})
     # hash_2.my_select                            # => {4=>4}
     def my_select(&prc)
+        
         prc ||= Proc.new {|k, v| k == v}
         
     end
