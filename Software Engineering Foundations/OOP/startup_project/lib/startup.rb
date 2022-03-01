@@ -57,6 +57,36 @@ class Startup
 
     end
 
+    def average_salary
+        numerator = 0
+        denominator = 0
+
+        @employees.each do |employee|
+            numerator += @salaries[employee.title]
+            denominator += 1
+        end       
+        return numerator / denominator
+        
+    end
+
+    def close
+        @employees = []
+        @funding = 0
+    end
+
+    def acquire(startup)
+        @funding += startup.funding
+        startup.salaries.each do |key, val|
+            if @salaries.has_key?(key) == false
+                @salaries[key] = val
+            end
+        end
+
+        (@employees << startup.employees).flatten!
+
+        startup.close
+    end
+
 
 
 end
