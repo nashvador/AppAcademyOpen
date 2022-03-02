@@ -6,3 +6,22 @@ end
 store_values_hashed
 end
 
+def char_replace!(str, hash)
+new_string = ""
+str.each_char do |letter|
+    if hash.has_key?(letter)
+        new_string += hash[letter]
+    else
+        new_string += letter
+    end
+end
+str.replace(new_string)
+end
+
+
+
+
+def product_inject(array)
+return array.inject(:*)
+
+end

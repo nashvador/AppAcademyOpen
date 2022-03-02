@@ -112,13 +112,8 @@ end
 def flatten(data)
     # Do something with array passing in a falsy value for if the array exists or not
     return [data] if data.is_a?(String) == true
+    return [data] if data.is_a?(Integer) == true
+    return data if data.length == 0
+ [*flatten(data[0]), *flatten(data[1..-1])]
 
-    data.each_with_object([]) do |value, array|
-        if value.kind_of?(Array) == true
-            flatten(value)
-        else
-            array << value
-        end
-    end
-    array
 end

@@ -28,12 +28,15 @@ end
 
 
 def prime_range(number1, number2)
+
+
 prime_numbers_array = []
-prime = true
 (number1..number2).each do |check_prime|
-    (2..check_prime).each do |divisor|
+    prime = true
+    (2...check_prime).each do |divisor|
         if check_prime%divisor == 0
             prime = false
+            break
         end
     end
     if prime == true
@@ -41,4 +44,7 @@ prime = true
     end
 end
 prime_numbers_array
+
+
+
 end
