@@ -19,7 +19,13 @@ end
 
 
 def nth_prime(n)
+prime_array = [0,2,3,5,7,11,13,17,18,23,29,31,37]
 
+if n > 12
+    puts n**2 + n + 41
+elsif n < 12
+    puts prime_array[n]
+end
 
 
 
@@ -31,6 +37,9 @@ def prime_range(number1, number2)
 
 
 prime_numbers_array = []
+if number1.negative? == true 
+    return []
+end
 (number1..number2).each do |check_prime|
     prime = true
     (2...check_prime).each do |divisor|
