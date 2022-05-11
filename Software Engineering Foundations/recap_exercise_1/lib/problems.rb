@@ -9,6 +9,7 @@ def all_vowel_pairs(words)
 vowels = "aeiou"
 new_array = []
 words.each_with_index do |word, idx|
+end
     
 
 
@@ -76,7 +77,7 @@ class Hash
     def my_select(&prc)
         
         prc ||= Proc.new {|k, v| k == v}
-        
+        prc.call(prc)
     end
 end
 
@@ -90,17 +91,17 @@ class String
     # "cats".substrings     # => ["c", "ca", "cat", "cats", "a", "at", "ats", "t", "ts", "s"]
     # "cats".substrings(2)  # => ["ca", "at", "ts"]
     def substrings(length = nil)
-    new_array = []
-    self.each_char.with_index do |char, idx|
-        (idx..self.length-1).each do |value|
+        new_array = []
+        self.each_char.with_index do |char, idx|
+            (idx..self.length-1).each do |value|
             new_array << self[idx..value]
+            end
         end
-    end
-    if length
-        new_array.select {|word| word.length == length}
-    else
-        new_array
-    end  
+        if length
+            new_array.select {|word| word.length == length}
+        else
+            new_array
+        end  
     end
 
 
@@ -126,3 +127,4 @@ class String
         new_string
     end
 end
+
