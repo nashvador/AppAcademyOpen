@@ -56,6 +56,9 @@ class Code
     return @pegs.length
   end
 
+  def self.num_exact_matches(guess)
+    Code.new(guess)
+  end
 
 
 end
