@@ -56,8 +56,19 @@ class Code
     return @pegs.length
   end
 
-  def self.num_exact_matches(guess)
-    Code.new(guess)
+  def num_exact_matches(guess)
+  counter = 0
+  (0..3).each do |values|
+    if @pegs[values] == guess.pegs[values]
+      counter += 1
+    end
+  end
+  counter
+  end
+
+  def num_near_matches(guess)
+    
+
   end
 
 
