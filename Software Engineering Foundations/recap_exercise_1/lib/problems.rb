@@ -9,12 +9,30 @@ def all_vowel_pairs(words)
 vowels = "aeiou"
 new_array = []
 words.each_with_index do |word, idx|
+(idx+1..words.length-1).each do |word_value|
+    new_array << word + " " + words[word_value]
+end
+end
+newer_array = []
+new_array.each do |word_pair|
+    has_vowel = false
+    vowels.each_char do |vowel|
+        if word_pair.include?(vowel)
+            has_vowel = true
+        else
+            has_vowel = false
+        end
+    end
+    if has_vowel == true
+        newer_array << word_pair
+    end
+end
+newer_array
 end
     
 
 
 
-end
 
 
 # Write a method, composite?, that takes in a number and returns a boolean indicating if the number
@@ -75,9 +93,8 @@ class Hash
     # hash_2.my_select { |k, v| k + 1 == v }      # => {10=>11, 5=>6, 7=>8})
     # hash_2.my_select                            # => {4=>4}
     def my_select(&prc)
-        
-        prc ||= Proc.new {|k, v| k == v}
-        prc.call(prc)
+        prc ||= Proc.new {|k, v| k == v ? v : k}
+        prc.call(self)
     end
 end
 

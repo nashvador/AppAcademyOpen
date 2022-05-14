@@ -71,5 +71,13 @@ class Code
 
   end
 
+  def ==(other_argument)
+    if self.pegs == other_argument.pegs
+      return true
+    else
+      return false
+    end 
+  end
+
 
 end
