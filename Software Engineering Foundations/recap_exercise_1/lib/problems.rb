@@ -21,6 +21,7 @@ new_array.each do |word_pair|
             has_vowel = true
         else
             has_vowel = false
+            break
         end
     end
     if has_vowel == true
@@ -92,9 +93,10 @@ class Hash
     # hash_2 = {4=>4, 10=>11, 12=>3, 5=>6, 7=>8}
     # hash_2.my_select { |k, v| k + 1 == v }      # => {10=>11, 5=>6, 7=>8})
     # hash_2.my_select                            # => {4=>4}
+    # hash = {"cat"=>"dog", "purple"=>"purple", "sound"=>"music", "open"=>"open"}
     def my_select(&prc)
-        prc ||= Proc.new {|k, v| k == v ? v : k}
-        prc.call(self)
+        prc ||= Proc.new {|k, v| k == v }
+        self.select { |key, value| prc.call(key, value) } 
     end
 end
 
