@@ -3,19 +3,22 @@
 def least_common_multiple(num_1, num_2)
 new_array = []
 
-
-
-def larger_function(num)
-
-
+(1..30).each do |value|
+    if value%num_1 == 0 && value%num_2 == 0
+        new_array << value
+    end
 end
+new_array[0]
+
 end
 
 
 # Write a method, most_frequent_bigram, that takes in a string and returns the two adjacent letters that appear the
 # most in the string.
 def most_frequent_bigram(str)
-
+array = []
+str.each_char do |character, idx|
+    
 end
 
 

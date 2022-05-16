@@ -95,7 +95,7 @@ class Hash
     # hash_2.my_select                            # => {4=>4}
     # hash = {"cat"=>"dog", "purple"=>"purple", "sound"=>"music", "open"=>"open"}
     def my_select(&prc)
-        prc ||= Proc.new {|k, v| k == v }
+        prc ||= Proc.new {|k, v| k == v  }
         self.select { |key, value| prc.call(key, value) } 
     end
 end
