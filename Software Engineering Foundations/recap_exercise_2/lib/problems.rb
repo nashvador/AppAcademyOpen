@@ -18,7 +18,13 @@ end
 def most_frequent_bigram(str)
 array = []
 str.each_char do |character, idx|
-    
+    if idx+1 == str.length
+        break
+    else
+        array << character + str[idx+1]
+    end
+end
+array
 end
 
 
