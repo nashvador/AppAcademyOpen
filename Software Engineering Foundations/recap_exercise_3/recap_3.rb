@@ -26,3 +26,20 @@ str.each_char.with_index do |char, idx|
 end
 print new_hash
 end
+
+def longest_streak(str)
+new_hash = Hash.new(0)
+counter = 0
+str.each_char do |char|
+    new_hash[char] += 1
+end
+output_hash = Hash[new_hash.select {|k,v| v == new_hash.values.max}]
+print output_hash.keys[-1] *new_hash.values.max
+
+end
+
+def bi_prime(num)
+(2..num/2).each do |divisor|
+    
+
+end
