@@ -18,3 +18,11 @@ else
     print false
 end
 end
+
+def char_indices(str)
+new_hash = Hash.new([])
+str.each_char.with_index do |char, idx|
+  new_hash[char] += [idx]
+end
+print new_hash
+end
