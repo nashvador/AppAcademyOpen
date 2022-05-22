@@ -43,3 +43,29 @@ def bi_prime(num)
     
 
 end
+
+
+def vowel_rotate(str)
+vowels = "aeiou"
+new_string = ""
+str.each_char do |letter|
+    if vowels.include?(letter)
+    new_string += letter
+    end
+end
+
+newer_array = new_string.chars.rotate(-1)
+
+new_string = newer_array.join("")
+counter = 0
+other_string = ""
+str.each_char do |ot_letter|
+    if vowels.include?(ot_letter)
+        other_string += new_string[counter]
+        counter += 1
+    else
+        other_string += ot_letter
+    end
+end
+print other_string
+end
