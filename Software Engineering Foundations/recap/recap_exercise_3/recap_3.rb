@@ -57,6 +57,7 @@ end
 newer_array = new_string.chars.rotate(-1)
 
 new_string = newer_array.join("")
+
 counter = 0
 other_string = ""
 str.each_char do |ot_letter|
